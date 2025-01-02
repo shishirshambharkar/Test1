@@ -3,7 +3,7 @@ hosts: localhost
 tasks:
   -name: Pull latest code
     git:
-      repo: 'https://github.com/shishirshambharkar/Test'
+      repo: 'https://github.com/shishirshambharkar/Test1.git'
       dest: '/var/www/quicksite'
 
   -name: Install dependencies
