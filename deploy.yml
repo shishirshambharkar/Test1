@@ -1,0 +1,15 @@
+- name: Deploy QuickSite
+hosts: localhost
+tasks:
+  -name: Pull latest code
+    git:
+      repo: 'https://github.com/shishirshambharkar/Test1.git'
+      dest: '/var/www/quicksite'
+
+  -name: Install dependencies
+    shell: npm install
+    args:
+      chdir: /var/www/quicksite
+
+  -name: Restart application
+    shell: pkill node; nohup node /var/www/quicksite/app.js &
